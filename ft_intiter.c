@@ -6,13 +6,13 @@
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 01:07:08 by hehuang           #+#    #+#             */
-/*   Updated: 2016/10/11 01:23:19 by hehuang          ###   ########.fr       */
+/*   Updated: 2016/10/17 10:08:43 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_intiter(int	*tab, void (*f)(int))
+void	ft_intiter(int *tab, void (*f)(int))
 {
 	int		i;
 

@@ -6,7 +6,7 @@
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/07 18:09:56 by hehuang           #+#    #+#             */
-/*   Updated: 2016/10/11 01:08:29 by hehuang          ###   ########.fr       */
+/*   Updated: 2016/10/17 10:12:29 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strlower(char *str, size_t len)
 {
 	size_t	i;
-	char	*ret;		
+	char	*ret;
 
 	i = 0;
 	if (str == NULL)

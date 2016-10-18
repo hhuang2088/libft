@@ -6,7 +6,7 @@
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/27 03:06:55 by hehuang           #+#    #+#             */
-/*   Updated: 2016/10/10 01:48:02 by hehuang          ###   ########.fr       */
+/*   Updated: 2016/10/17 10:12:01 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	char		*d;
-	const char 	*s;
+	const char	*s;
 	size_t		n;
 	size_t		d_len;
 
