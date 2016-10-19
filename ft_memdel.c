@@ -6,7 +6,7 @@
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/28 03:10:35 by hehuang           #+#    #+#             */
-/*   Updated: 2016/10/01 16:40:46 by hehuang          ###   ########.fr       */
+/*   Updated: 2016/10/19 10:25:17 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_memdel(void **ap)
 {
-	if (ap == NULL)
+	if (!ap)
 		return ;
 	free(*ap);
 	*ap = NULL;

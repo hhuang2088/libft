@@ -6,7 +6,7 @@
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/28 03:49:52 by hehuang           #+#    #+#             */
-/*   Updated: 2016/10/02 19:45:49 by hehuang          ###   ########.fr       */
+/*   Updated: 2016/10/19 10:37:39 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char	*ret;
 
 	i = 0;
-	if (s == NULL || f == NULL)
+	if (!s || !f)
 		return (NULL);
 	ret = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (ret == NULL)

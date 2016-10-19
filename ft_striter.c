@@ -6,7 +6,7 @@
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/28 03:34:47 by hehuang           #+#    #+#             */
-/*   Updated: 2016/09/29 17:22:38 by hehuang          ###   ########.fr       */
+/*   Updated: 2016/10/19 10:32:58 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,8 @@
 
 void	ft_striter(char *s, void (*f)(char*))
 {
-	int		i;
-
-	i = 0;
-	if (s && f)
-	{
-		while (s != NULL && *s)
-		{
-			f(s++);
-		}
-	}
+	if (!s || !f)
+		return ;
+	while (*s)
+		f(s++);
 }

@@ -6,7 +6,7 @@
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/28 13:07:15 by hehuang           #+#    #+#             */
-/*   Updated: 2016/10/03 21:22:20 by hehuang          ###   ########.fr       */
+/*   Updated: 2016/10/19 10:42:58 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strtrim(char const *s)
 	i = 0;
 	j = 0;
 	k = 0;
-	if (s == NULL)
+	if (!s)
 		return (NULL);
 	j = ft_strlen(s);
 	while (s[j - 1] == ' ' || s[j - 1] == '\t' || s[j - 1] == '\n')

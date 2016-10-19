@@ -6,7 +6,7 @@
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/26 17:11:52 by hehuang           #+#    #+#             */
-/*   Updated: 2016/10/03 21:16:10 by hehuang          ###   ########.fr       */
+/*   Updated: 2016/10/19 10:44:13 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,15 @@ char		*ft_strstr(const char *big, const char *little)
 	size_t	i;
 	size_t	l;
 	int		match;
+	size_t	len_big;
 
 	i = 0;
 	l = 0;
 	match = 0;
+	len_big = ft_strlen(big) + 1;
 	if (ft_strlen(little) == 0)
 		return ((char*)big);
-	while (i < ft_strlen(big) + 1)
+	while (i < len_big)
 	{
 		if (big[i] == little[0])
 		{

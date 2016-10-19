@@ -6,7 +6,7 @@
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 03:30:02 by hehuang           #+#    #+#             */
-/*   Updated: 2016/10/04 23:08:39 by hehuang          ###   ########.fr       */
+/*   Updated: 2016/10/19 10:26:46 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putstr_fd(char const *s, int fd)
 {
 	int		i;
 
-	if (s == NULL)
+	if (!s)
 		return ;
 	i = 0;
 	while (s[i] != '\0')

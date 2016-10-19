@@ -15,11 +15,15 @@
 char		*ft_strchr(const char *s, int c)
 {
 	size_t	i;
+	size_t	s_len;
+	char	c2;
 
+	s_len = ft_strlen(s) + 1;
+	c2 = (char)c;
 	i = 0;
-	while (i < ft_strlen(s) + 1)
+	while (i < s_len)
 	{
-		if (s[i] == (char)c)
+		if (s[i] == c2)
 			return ((char*)(s + i));
 		i++;
 	}

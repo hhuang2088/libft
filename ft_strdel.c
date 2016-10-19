@@ -6,7 +6,7 @@
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/28 03:21:28 by hehuang           #+#    #+#             */
-/*   Updated: 2016/10/01 17:42:01 by hehuang          ###   ########.fr       */
+/*   Updated: 2016/10/19 10:29:49 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_strdel(char **as)
 {
-	if (as == NULL)
+	if (!as)
 		return ;
 	free(*as);
 	*as = NULL;

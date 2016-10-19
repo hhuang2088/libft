@@ -6,7 +6,7 @@
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/07 23:09:04 by hehuang           #+#    #+#             */
-/*   Updated: 2016/10/11 00:46:14 by hehuang          ###   ########.fr       */
+/*   Updated: 2016/10/19 10:28:06 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_skipwhitespace(char *str, int i)
 {
-	if (str == NULL)
+	if (!str)
 		return (i);
 	while (str[i] && str[i] != '\0' && ft_iswhitespace(str[i]))
 		i++;
