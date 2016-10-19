@@ -6,7 +6,7 @@
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 00:18:31 by hehuang           #+#    #+#             */
-/*   Updated: 2016/09/23 05:03:43 by hehuang          ###   ########.fr       */
+/*   Updated: 2016/10/19 11:22:42 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
+	char	*ptr;
 
 	i = 0;
+	ptr = (char *)s;
 	while (i < n)
-		((char *)s)[i++] = 0;
+		(ptr)[i++] = 0;
 }

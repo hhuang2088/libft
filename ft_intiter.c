@@ -6,7 +6,7 @@
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 01:07:08 by hehuang           #+#    #+#             */
-/*   Updated: 2016/10/17 10:08:43 by hehuang          ###   ########.fr       */
+/*   Updated: 2016/10/19 11:24:33 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_intiter(int *tab, void (*f)(int))
 	i = 0;
 	if (tab && f)
 	{
-		while (tab != NULL && tab[i])
+		while (tab[i])
 			f(tab[i++]);
 	}
 }

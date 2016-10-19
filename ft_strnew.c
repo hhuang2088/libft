@@ -6,7 +6,7 @@
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/28 03:12:20 by hehuang           #+#    #+#             */
-/*   Updated: 2016/09/29 16:56:54 by hehuang          ###   ########.fr       */
+/*   Updated: 2016/10/19 11:34:07 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnew(size_t size)
 	char	*str;
 
 	str = (char*)malloc(sizeof(char) * (size + 1));
-	if (str == NULL)
+	if (!str)
 		return (NULL);
 	ft_bzero(str, size + 1);
 	return (str);

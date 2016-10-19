@@ -6,7 +6,7 @@
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/28 13:07:15 by hehuang           #+#    #+#             */
-/*   Updated: 2016/10/19 10:42:58 by hehuang          ###   ########.fr       */
+/*   Updated: 2016/10/19 11:37:17 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strtrim(char const *s)
 	if (j <= 0)
 		j = 0;
 	ret = ft_strnew(j);
-	if (ret == NULL)
+	if (!ret)
 		return (NULL);
 	while (k < j)
 		ret[k++] = s[i++];

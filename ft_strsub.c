@@ -6,7 +6,7 @@
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/28 12:33:57 by hehuang           #+#    #+#             */
-/*   Updated: 2016/10/19 10:42:35 by hehuang          ###   ########.fr       */
+/*   Updated: 2016/10/19 11:35:09 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	if (!s || !ret)
 		return (NULL);
 	i = 0;
-	if (ret == NULL)
+	if (!ret)
 		return (NULL);
 	while (i < len)
 		ret[i++] = s[start++];
