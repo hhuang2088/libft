@@ -61,6 +61,7 @@ SRC_NAME = ft_memset.c \
 			ft_strnequ.c \
 			ft_strsub.c \
 			ft_strjoin.c \
+			ft_strjoin_with_delimiter.c \
 			ft_strtrim.c \
 			ft_strsplit.c \
 			ft_itoa.c \
@@ -232,6 +233,9 @@ ft_strsub.o: ft_strsub.c $(HEADER)
 ft_strjoin.o: ft_strjoin.c $(HEADER)
 	$(COMPILE) ft_strjoin.c
 
+ft_strjoin_with_delimiter.o: ft_strjoin_with_delimiter.c $(HEADER)
+	$(COMPILE) ft_strjoin_with_delimiter.c
+
 ft_strtrim.o: ft_strtrim.c $(HEADER)
 	$(COMPILE) ft_strtrim.c
 
@@ -336,6 +340,7 @@ get_list_size.o: get_list_size.c $(HEADER)
 
 copy_list.o: copy_list.c $(HEADER)
 	$(COMPILE) copy_list.c
+
 
 $(NAME): $(OBJ_NAME)
 	$(AR) $(NAME) $(OBJ_NAME)
