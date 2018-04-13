@@ -6,7 +6,7 @@
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/28 18:43:27 by hehuang           #+#    #+#             */
-/*   Updated: 2016/10/03 21:14:47 by hehuang          ###   ########.fr       */
+/*   Updated: 2016/10/20 23:56:59 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static char	*get_word(char const *s, char c, int i)
 	return (word);
 }
 
-char		**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(const char *s, char c)
 {
 	int		i;
 	int		j;
@@ -71,17 +71,14 @@ char		**ft_strsplit(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	ret = (char**)malloc(sizeof(char*) * (word_count(s, c) + 1));
-	if (ret == NULL)
+	if (!ret)
 		return (NULL);
 	while (s[i] != '\0')
 	{
 		while (s[i] == c && s[i] != '\0')
 			i++;
 		if (s[i] != '\0')
-		{
-			ret[j] = (char*)malloc(sizeof(char) * (get_word_len(s, c, i) + 1));
 			ret[j++] = get_word(s, c, i);
-		}
 		while (s[i] != c && s[i] != '\0')
 			i++;
 	}

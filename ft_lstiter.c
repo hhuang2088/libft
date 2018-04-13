@@ -12,11 +12,18 @@
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+void 	ft_nodeiter(t_node *node, void (*f)(t_node *elem))
 {
-	if (!lst || !f)
+	if (!node || !f)
 		return ;
-	f(lst);
-	if (lst->next != NULL)
-		ft_lstiter(lst->next, f);
+	f(node);
+	if (node->next != NULL)
+		ft_nodeiter(node->next, f);
+}
+
+void	ft_lstiter(t_list *list, void (*f)(t_node *elem))
+{
+	if (!list || !f)
+		return ;
+	ft_nodeiter(list->head, f);
 }

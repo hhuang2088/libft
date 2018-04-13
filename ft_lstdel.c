@@ -12,13 +12,21 @@
 
 #include "libft.h"
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+void	ft_nodedel(t_node **anode, void (*del)(void *, size_t))
 {
-	if (!alst || !del)
+	if (!anode || !del)
 		return ;
-	if ((*alst)->next != NULL)
-		ft_lstdel(&(*alst)->next, del);
-	del((*alst)->content, (*alst)->content_size);
-	free(*alst);
-	*alst = NULL;
+	if ((*anode)->next != NULL)
+		ft_nodedel(&(*anode)->next, del);
+	del((*anode)->content, (*anode)->content_size);
+	free(*anode);
+	*anode = NULL;
+}
+
+void 	ft_lstdel(t_list *list, void (*del)(void *, size_t))
+{
+	if (!list || !del)
+		return ;
+	ft_nodedel(&list->head, del);
+	free(list);
 }

@@ -6,7 +6,7 @@
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 15:45:33 by hehuang           #+#    #+#             */
-/*   Updated: 2016/10/11 01:04:49 by hehuang          ###   ########.fr       */
+/*   Updated: 2017/05/25 04:58:21 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,39 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <fcntl.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+# define BUFF_SIZE 32
 
-typedef struct		s_list
+typedef struct		s_node
 {
 	void			*content;
 	size_t			content_size;
-	struct s_list	*next;
+	struct s_node	*next;
+}					t_node;
+
+typedef struct 		s_list
+{
+	t_node			*head;
+	t_node			*node;
 }					t_list;
+
+typedef	struct		s_btree
+{
+	struct s_btree	*left;
+	struct s_btree	*right;
+	void			*item;
+	size_t			item_size;
+}					t_btree;
+
+typedef struct		s_fdhandle
+{
+	struct s_fdhandle	*head;
+	int					fd;
+	char				*body;
+	struct s_fdhandle	*next;
+}					t_fdhandle;
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -68,6 +94,9 @@ char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_itoa(int n);
+char				*ft_itoa_base(long long nbr, long long base, long long cap);
+char				*ft_utoa_base(unsigned long long nbr,
+	unsigned long long base, int cap);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
@@ -77,15 +106,32 @@ void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 t_list				*ft_lstnew(void const *content, size_t content_size);
-void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstadd(t_list **alst, t_list *new);
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_node				*ft_nodenew(void const *content, size_t content_size);
+void				ft_nodedel(t_node **anode, void (*del)(void *, size_t));
+void				ft_lstdelone(t_list *list, void (*del)(void *, size_t));
+void				ft_nodedelone(t_node **alst, void (*del)(void *, size_t));
+void				ft_lstdel(t_list *alst, void (*del)(void *, size_t));
+void				ft_lstadd(t_list *alst, t_node *new);
+void				ft_nodeadd(t_node *node, t_node *new);
+void				ft_lstiter(t_list *list, void (*f)(t_node *elem));
+void 				ft_nodeiter(t_node *node, void (*f)(t_node *elem));
+t_list				*ft_lstmap(t_list *list, t_node *(*f)(t_node *elem));
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strupper(char *str, size_t len);
 char				*ft_strlower(char *str, size_t len);
 int					ft_iswhitespace(char c);
 int					ft_skipwhitespace(char *str, int i);
 void				ft_intiter(int	*tab, void	(*f)(int));
+t_btree				*btree_create_node(void *item, size_t item_size);
+void				btree_apply_prefix(t_btree *root, void (*f)(void *));
+void				btree_apply_infix(t_btree *root, void (*f)(void *));
+void				btree_apply_suffix(t_btree *root, void (*f)(void *));
+int					ft_findchar(const char *str, const char c);
+void				*ft_realloc(void *ptr, size_t size);
+int					get_next_line(const int fd, char **line);
+long long			ft_atoi_base(const char *str, int base);
+void				list_free(t_list *list);
+void 				node_free(t_node *node);
+int					get_list_size(t_list *list);
+t_list				*copy_list(t_list *src_list);
 #endif

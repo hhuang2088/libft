@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_skipwhitespace.c                                :+:      :+:    :+:   */
+/*   ft_grid.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/07 23:09:04 by hehuang           #+#    #+#             */
-/*   Updated: 2016/10/19 10:28:06 by hehuang          ###   ########.fr       */
+/*   Created: 2016/10/19 15:40:17 by hehuang           #+#    #+#             */
+/*   Updated: 2016/10/19 15:49:32 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_skipwhitespace(char *str, int i)
+char	**ft_grid(int x, int y)
 {
-	if (!str)
-		return (i);
-	while (str[i] && str[i] != '\0' && ft_iswhitespace(str[i]))
-		i++;
-	return (i);
+	int		i;
+	char	**grid;
+
+	i = 0;
+	grid = (char**)malloc(sizeof(char*) * y);
+	if (!grid)
+		return (NULL);
+	while (i < x)
+	{
+		grid[i] = (char*)malloc(sizeof(char) * (x + 1));
+		if (!grid[i++])
+			return (NULL);
+	}
+	return (grid);
 }
