@@ -6,7 +6,7 @@
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 15:45:33 by hehuang           #+#    #+#             */
-/*   Updated: 2017/05/25 04:58:21 by hehuang          ###   ########.fr       */
+/*   Updated: 2018/11/28 15:01:18 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <fcntl.h>
 # include <sys/types.h>
 # include <sys/uio.h>
-# define BUFF_SIZE 32
+# define BUFF_SIZE 1024
 
 typedef struct		s_node
 {
@@ -28,7 +28,7 @@ typedef struct		s_node
 	struct s_node	*next;
 }					t_node;
 
-typedef struct 		s_list
+typedef struct		s_list
 {
 	t_node			*head;
 	t_node			*node;
@@ -91,6 +91,8 @@ int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strjoin_with_delimiter(char const *s1, char const *s2,
+					char const *delim);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_itoa(int n);
@@ -114,7 +116,7 @@ void				ft_lstdel(t_list *alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list *alst, t_node *new);
 void				ft_nodeadd(t_node *node, t_node *new);
 void				ft_lstiter(t_list *list, void (*f)(t_node *elem));
-void 				ft_nodeiter(t_node *node, void (*f)(t_node *elem));
+void				ft_nodeiter(t_node *node, void (*f)(t_node *elem));
 t_list				*ft_lstmap(t_list *list, t_node *(*f)(t_node *elem));
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strupper(char *str, size_t len);
@@ -131,7 +133,7 @@ void				*ft_realloc(void *ptr, size_t size);
 int					get_next_line(const int fd, char **line);
 long long			ft_atoi_base(const char *str, int base);
 void				list_free(t_list *list);
-void 				node_free(t_node *node);
+void				node_free(t_node *node);
 int					get_list_size(t_list *list);
 t_list				*copy_list(t_list *src_list);
 #endif

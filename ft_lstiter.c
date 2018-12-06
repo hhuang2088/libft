@@ -6,13 +6,13 @@
 /*   By: hehuang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/05 00:28:17 by hehuang           #+#    #+#             */
-/*   Updated: 2016/10/19 10:21:18 by hehuang          ###   ########.fr       */
+/*   Updated: 2018/11/28 15:00:50 by hehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void 	ft_nodeiter(t_node *node, void (*f)(t_node *elem))
+void	ft_nodeiter(t_node *node, void (*f)(t_node *elem))
 {
 	if (!node || !f)
 		return ;
